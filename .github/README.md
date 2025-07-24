@@ -41,3 +41,11 @@ Clone the project
 `make install`
 
 You will find executables in ~/azeroth-server/bin/
+
+
+## Troubleshooting
+##### CANNOT LINK EXECUTABLE "./authserver": library "libmariadb.so" not found: needed by main executable
+
+fix: `ln -sf $PREFIX/lib/aarch64-linux-android/libmariadb.so $PREFIX/lib/libmariadb.so`
+
+
