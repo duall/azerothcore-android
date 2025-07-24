@@ -63,7 +63,7 @@ float frand(float min, float max)
 
 Milliseconds randtime(Milliseconds min, Milliseconds max)
 {
-    long long diff = max.count() - min.count();
+    int64_t diff = max.count() - min.count();
     ASSERT(diff >= 0);
     ASSERT(diff <= (uint32) - 1);
     return min + Milliseconds(urand(0, diff));
@@ -71,7 +71,7 @@ Milliseconds randtime(Milliseconds min, Milliseconds max)
 
 Seconds randtime(Seconds min, Seconds max)
 {
-    long long diff = max.count() - min.count();
+    int64_t diff = max.count() - min.count();
     ASSERT(diff >= 0);
     ASSERT(diff <= (uint32) - 1);
     return min + Seconds(urand(0, diff));

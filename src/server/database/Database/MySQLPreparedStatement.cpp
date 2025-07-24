@@ -21,6 +21,7 @@
 #include "MySQLHacks.h"
 #include "PreparedStatement.h"
 
+
 template<typename T>
 struct MySQLType { };
 
@@ -207,3 +208,4 @@ std::string MySQLPreparedStatement::getQueryString() const
 
     return queryString;
 }
+template<> struct MySQLType<long long> : std::integral_constant<enum_field_types, MYSQL_TYPE_LONGLONG> { };

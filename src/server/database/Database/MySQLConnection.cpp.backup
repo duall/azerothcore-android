@@ -129,13 +129,13 @@ uint32 MySQLConnection::Open()
 
     if (m_connectionInfo.ssl != "")
     {
-        /* mysql_ssl_mode opt_use_ssl = SSL_MODE_DISABLED; */ // MariaDB compatibility fix
+        mysql_ssl_mode opt_use_ssl = SSL_MODE_DISABLED;
         if (m_connectionInfo.ssl == "ssl")
         {
-            /* opt_use_ssl = SSL_MODE_REQUIRED; */ // MariaDB compatibility fix
+            opt_use_ssl = SSL_MODE_REQUIRED;
         }
 
-        /* mysql_options(mysqlInit, MYSQL_OPT_SSL_MODE, (char const*)mysql_options(mysqlInit, MYSQL_OPT_SSL_MODE, (char const*)&opt_use_ssl);opt_use_ssl); */ // MariaDB compatibility fix
+        mysql_options(mysqlInit, MYSQL_OPT_SSL_MODE, (char const*)&opt_use_ssl);
     }
 
     m_Mysql = reinterpret_cast<MySQLHandle*>(mysql_real_connect(mysqlInit, m_connectionInfo.host.c_str(), m_connectionInfo.user.c_str(),
@@ -216,7 +216,7 @@ bool MySQLConnection::Execute(PreparedStatementBase* stmt)
 
     uint32 _s = getMSTime();
 
-#if 0 // Force MariaDB compatibility - was: MYSQL_VERSION_ID >= 80300
+#if MYSQL_VERSION_ID >= 80300
     if (mysql_stmt_bind_named_param(msql_STMT, msql_BIND, m_mStmt->GetParameterCount(), nullptr))
 #else
     if (mysql_stmt_bind_param(msql_STMT, msql_BIND))
@@ -268,7 +268,7 @@ bool MySQLConnection::_Query(PreparedStatementBase* stmt, MySQLPreparedStatement
 
     uint32 _s = getMSTime();
 
-#if 0 // Force MariaDB compatibility - was: MYSQL_VERSION_ID >= 80300
+#if MYSQL_VERSION_ID >= 80300
     if (mysql_stmt_bind_named_param(msql_STMT, msql_BIND, m_mStmt->GetParameterCount(), nullptr))
 #else
     if (mysql_stmt_bind_param(msql_STMT, msql_BIND))

@@ -16,7 +16,6 @@
  */
 
 #include "PreparedStatement.h"
-
 #include "Errors.h"
 #include "Log.h"
 #include "MySQLConnection.h"
@@ -130,5 +129,3 @@ std::string PreparedStatementData::ToString(std::nullptr_t /*value*/)
 {
     return "NULL";
 }
-template void PreparedStatementBase::SetValidData(const uint8 index, long long const& value);
-template std::string PreparedStatementData::ToString(long long);

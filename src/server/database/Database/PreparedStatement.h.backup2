@@ -26,11 +26,6 @@
 #include <variant>
 #include <vector>
 
-
-
-
-using long_long_compat = int64;
-
 namespace Acore::Types
 {
     template <typename T>
@@ -56,7 +51,7 @@ struct PreparedStatementData
         int16,
         int32,
         int64,
-
+        long long,
         float,
         double,
         std::string,
