@@ -34,7 +34,7 @@ Clone the project
 
 ## Compile Azerothcore
 
-`make -j<number of cores>`
+`make -j$(nproc)`
 
 ### Install Azerothcore
 
