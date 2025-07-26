@@ -51,7 +51,7 @@ You will find executables in ~/azeroth-server/bin/
 `cp ~/azeroth-server/etc/authserver.conf.dist ~/azeroth-server/etc/authserver.conf && cp ~/azeroth-server/etc/worldserver.conf.dist ~/azeroth-server/etc/worldserver.conf`
 
 ### Download serverdata
-curl -L https://github.com/wowgaming/client-data/releases/download/v16/data.zip -o ~/data.zip && unzip ~/data.zip -d ~/azeroth-server/ && rm ~/data.zip
+`curl -L https://github.com/wowgaming/client-data/releases/download/v16/data.zip -o ~/data.zip && unzip ~/data.zip -d ~/azeroth-server/ && rm ~/data.zip`
 
 ### Fix mariadb link
 ##### CANNOT LINK EXECUTABLE "./authserver": library "libmariadb.so" not found: needed by main executable
