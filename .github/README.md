@@ -13,7 +13,7 @@ Clone the project
 
 ### Enter the project's directory
 
-`cd azerothcore`
+`cd azerothcore-android`
 
 ### Create the build directory
 
