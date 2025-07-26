@@ -15,6 +15,10 @@ Clone the project
 
 `cd azerothcore-android`
 
+### Clone playerbot module
+
+`git clone https://github.com/liyunfan1223/mod-playerbots.git modules/mod-playerbots`
+
 ### Create the build directory
 
 `mkdir build`
@@ -42,10 +46,25 @@ Clone the project
 
 You will find executables in ~/azeroth-server/bin/
 
+### Apply configs
 
-## Troubleshooting
+`cp ~/azeroth-server/etc/authserver.conf.dist ~/azeroth-server/etc/authserver.conf && cp ~/azeroth-server/etc/worldserver.conf.dist ~/azeroth-server/etc/worldserver.conf`
+
+
+### Fix mariadb link
 ##### CANNOT LINK EXECUTABLE "./authserver": library "libmariadb.so" not found: needed by main executable
 
-fix: `ln -sf $PREFIX/lib/aarch64-linux-android/libmariadb.so $PREFIX/lib/libmariadb.so`
+`ln -sf $PREFIX/lib/aarch64-linux-android/libmariadb.so $PREFIX/lib/libmariadb.so`
+
+## Servers should be runnable now
+
+`cd ~/azeroth-server/`
+
+`./bin/authserver`
+
+`./bin/worldserver`
+
+Enjoy
+
 
 
