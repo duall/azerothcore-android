@@ -1,4 +1,7 @@
-<img width="706" height="732" alt="image" src="https://github.com/user-attachments/assets/d3b48f90-d5a2-41c4-b95b-56fdb88d26df" />
+<img width="310" height="414" alt="image" src="https://github.com/user-attachments/assets/a249da67-2bfe-4c30-b11b-0227a0f17edc" />
+
+*yes it runs on a smartwatch ^^*
+
 
 
 ## Install Dependencies (In termux android)
