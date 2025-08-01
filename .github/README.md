@@ -1,3 +1,11 @@
+### ! Go here for one click install script + preconfigured 40modules singleplayer config:
+
+### https://github.com/duall/singlePlayerWow-android
+
+
+
+## This repo is for raw azerothcore+playerbots:
+
 <img width="310" height="414" alt="image" src="https://github.com/user-attachments/assets/a249da67-2bfe-4c30-b11b-0227a0f17edc" />
 
 *yes it runs on a smartwatch ^^*
