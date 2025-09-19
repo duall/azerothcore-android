@@ -15,7 +15,7 @@
 ## Install Dependencies (In termux android)
 You need to install the build and runtime dependancies:
 
-`pkg install git cmake make clang mariadb boost-headers boost-static`
+`pkg install git cmake make clang mariadb boost-headers boost-static libc++`
 
 ### Install Azerothcore
 Clone the project
@@ -44,8 +44,8 @@ Clone the project
 -DCMAKE_C_COMPILER=$PREFIX/bin/clang \
 -DCMAKE_CXX_COMPILER=$PREFIX/bin/clang++ \
 -DWITH_WARNINGS=1 -DTOOLS=0 -DSCRIPTS=static \
--DCMAKE_CXX_FLAGS="-D__ANDROID__ -DANDROID" \
--DCMAKE_EXE_LINKER_FLAGS="-Wl,--allow-multiple-definition"`
+-DCMAKE_CXX_FLAGS="-D__ANDROID__ -DANDROID -Wno-deprecated-literal-operator" \
+-DCMAKE_EXE_LINKER_FLAGS="-Wl,--allow-multiple-definition -lunwind"`
 
 ## Compile Azerothcore
 
